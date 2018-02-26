@@ -1,0 +1,167 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$avatar-name: 'avatar';
+$avatar-x: 0px;
+$avatar-y: 0px;
+$avatar-offset-x: 0px;
+$avatar-offset-y: 0px;
+$avatar-width: 40px;
+$avatar-height: 40px;
+$avatar-total-width: 86px;
+$avatar-total-height: 80px;
+$avatar-image: '../images/sprite.png';
+$avatar: (0px, 0px, 0px, 0px, 40px, 40px, 86px, 80px, '../images/sprite.png', 'avatar', );
+$bell-name: 'bell';
+$bell-x: 47px;
+$bell-y: 40px;
+$bell-offset-x: -47px;
+$bell-offset-y: -40px;
+$bell-width: 20px;
+$bell-height: 22px;
+$bell-total-width: 86px;
+$bell-total-height: 80px;
+$bell-image: '../images/sprite.png';
+$bell: (47px, 40px, -47px, -40px, 20px, 22px, 86px, 80px, '../images/sprite.png', 'bell', );
+$checked-name: 'checked';
+$checked-x: 0px;
+$checked-y: 40px;
+$checked-offset-x: 0px;
+$checked-offset-y: -40px;
+$checked-width: 23px;
+$checked-height: 23px;
+$checked-total-width: 86px;
+$checked-total-height: 80px;
+$checked-image: '../images/sprite.png';
+$checked: (0px, 40px, 0px, -40px, 23px, 23px, 86px, 80px, '../images/sprite.png', 'checked', );
+$edu-name: 'edu';
+$edu-x: 40px;
+$edu-y: 0px;
+$edu-offset-x: -40px;
+$edu-offset-y: 0px;
+$edu-width: 32px;
+$edu-height: 33px;
+$edu-total-width: 86px;
+$edu-total-height: 80px;
+$edu-image: '../images/sprite.png';
+$edu: (40px, 0px, -40px, 0px, 32px, 33px, 86px, 80px, '../images/sprite.png', 'edu', );
+$graymark-name: 'graymark';
+$graymark-x: 72px;
+$graymark-y: 0px;
+$graymark-offset-x: -72px;
+$graymark-offset-y: 0px;
+$graymark-width: 14px;
+$graymark-height: 21px;
+$graymark-total-width: 86px;
+$graymark-total-height: 80px;
+$graymark-image: '../images/sprite.png';
+$graymark: (72px, 0px, -72px, 0px, 14px, 21px, 86px, 80px, '../images/sprite.png', 'graymark', );
+$markmap-name: 'markmap';
+$markmap-x: 72px;
+$markmap-y: 21px;
+$markmap-offset-x: -72px;
+$markmap-offset-y: -21px;
+$markmap-width: 14px;
+$markmap-height: 20px;
+$markmap-total-width: 86px;
+$markmap-total-height: 80px;
+$markmap-image: '../images/sprite.png';
+$markmap: (72px, 21px, -72px, -21px, 14px, 20px, 86px, 80px, '../images/sprite.png', 'markmap', );
+$search-name: 'search';
+$search-x: 0px;
+$search-y: 63px;
+$search-offset-x: 0px;
+$search-offset-y: -63px;
+$search-width: 17px;
+$search-height: 17px;
+$search-total-width: 86px;
+$search-total-height: 80px;
+$search-image: '../images/sprite.png';
+$search: (0px, 63px, 0px, -63px, 17px, 17px, 86px, 80px, '../images/sprite.png', 'search', );
+$star-name: 'star';
+$star-x: 23px;
+$star-y: 40px;
+$star-offset-x: -23px;
+$star-offset-y: -40px;
+$star-width: 24px;
+$star-height: 22px;
+$star-total-width: 86px;
+$star-total-height: 80px;
+$star-image: '../images/sprite.png';
+$star: (23px, 40px, -23px, -40px, 24px, 22px, 86px, 80px, '../images/sprite.png', 'star', );
+$spritesheet-width: 86px;
+$spritesheet-height: 80px;
+$spritesheet-image: '../images/sprite.png';
+$spritesheet-sprites: ($avatar, $bell, $checked, $edu, $graymark, $markmap, $search, $star, );
+$spritesheet: (86px, 80px, '../images/sprite.png', $spritesheet-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
