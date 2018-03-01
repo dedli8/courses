@@ -1,0 +1,17 @@
+$body-bg: #f2f2f2;
+$body-color: #000000;
+$grid-breakpoints: (
+        xs: 0,
+        sm: 320px,
+        md: 768px,
+        lg: 992px,
+        xl: 1920px
+);
+$container-max-widths: (
+        xl: 1848px
+);
+$robolight: 'Roboto Light';
+$roboreg: 'Roboto Regular';
+$robothin: 'Roboto Thin';
+
+$font-family-main: $roboreg;

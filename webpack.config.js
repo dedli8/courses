@@ -7,6 +7,7 @@ const isDevelopment = !process.env.production;
 const assetsPath = path.join(__dirname, '/public');
 const SpritesmithPlugin = require('webpack-spritesmith');
 const autoprefixer = require('autoprefixer');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const extractSass = new ExtractTextPlugin({
     filename: '[name].css',
     disable: isDevelopment
@@ -40,7 +41,8 @@ const config = {
                 use: [{
                         loader: 'css-loader',
                         options: {
-                            minimize: !isDevelopment
+                            minimize: !isDevelopment,
+                            sourceMap: true
                         }
                     },
                     {
@@ -54,11 +56,27 @@ const config = {
                             sourceMap: true
                         }
                     },
-                    'resolve-url-loader',
-                    'sass-loader'
+                    {
+                        loader: 'resolve-url-loader',
+                        options: {
+                            sourceMap: true
+                        }
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: true
+                        }
+                    }
+
                 ]
             })
-        }, {
+        },
+            {
+                test: /\.(html)$/,
+                use: ['html-loader']
+            },
+            {
             test: /\.(gif|png|jpe?g|svg)$/i,
             use: [{
                     loader: 'file-loader',
@@ -86,6 +104,9 @@ const config = {
         }]
     },
     plugins: [
+        new HtmlWebpackPlugin({
+            template:'src/index.html'
+        }),
         require('autoprefixer'),
 	new SpritesmithPlugin({
             src: {
@@ -94,7 +115,7 @@ const config = {
             },
             target: {
                 image: path.resolve(__dirname, 'src/images/sprite.png'),
-                css: path.resolve(__dirname, 'src/sass/sprite.scss')
+                css: path.resolve(__dirname, 'src/sass/_sprite.scss')
             },
             apiOptions: {
                 cssImageRef: "../images/sprite.png"
