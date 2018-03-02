@@ -1,0 +1,11 @@
+.main-section{
+  position: relative;
+  top: -211px;
+  width: 100%;
+  .first-column{
+    //width: 753px/1920px*100%;
+//min-width: 510px;
+  }
+  @import "mediaobject";
+  @import "card";
+}

@@ -1,0 +1,89 @@
+.media {
+  padding-top: 70px;
+  padding-left: 53px/753px*100%;
+  padding-bottom: 94px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 3px #a3a3a3;
+  &:nth-child(2){
+    margin-bottom: 20px;
+  }
+  &:nth-child(3){
+    padding-top: 47px;
+    padding-bottom: 45px;
+  }
+  .edu-icon {
+    @include sprite($edu);
+    margin-right: 23px/753px*100%;
+  }
+  .leaf-icon {
+    @include sprite($leaf);
+    margin-right: 23px/753px*100%;
+    width: 31px;
+  }
+  .media-body{
+    font-family: $roboreg;
+    font-size: 14px;
+    //min-width: 490px;
+    p{
+      margin-bottom: 40px;
+      font-size: 24px;
+      font-family: $robolight;
+      vertical-align: text-top;
+    }
+  }
+  .arrow-up{
+    position: relative;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 8px 8px 8px;
+    border-color: transparent transparent #2e2e2e transparent;
+    &:after{
+      position: absolute;
+      top: 3px;
+      left: -5px;
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 5px 5px 5px;
+      border-color: transparent transparent $body-bg transparent;
+    }
+  }
+  .arrow-down{
+    position: relative;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 8px 0 8px;
+    border-color: #2e2e2e transparent transparent transparent;
+    &:after{
+      position: absolute;
+      top: -8px;
+      left: -5px;
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 5px 5px 0 5px;
+      border-color: $body-bg transparent transparent transparent;
+    }
+  }
+}
+.media-first {
+  color: white;
+  background: transparent;
+  padding-top: 0;
+  padding-bottom: 50px;
+  box-shadow: none;
+  .media-body {
+    p {
+      font-size: 24px;
+      margin-bottom: 20px;
+      @include media-breakpoint-up(xl){
+        font-size: 40px;
+      }
+    }
+  }
+}
