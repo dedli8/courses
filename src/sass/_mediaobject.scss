@@ -1,22 +1,24 @@
+//media object styles
+
 .media {
   padding-top: 70px;
-  padding-left: 53px/753px*100%;
+  padding-right: 44px/753px*100%;
+  padding-left: 53px;
   padding-bottom: 94px;
   box-sizing: border-box;
   background-color: #ffffff;
   box-shadow: 0px 0px 3px #a3a3a3;
-  &:nth-child(2){
-    margin-bottom: 20px;
-  }
-  &:nth-child(3){
-    padding-top: 47px;
-    padding-bottom: 45px;
-  }
+  margin-right: 1rem;
   .edu-icon {
     @include sprite($edu);
     margin-right: 23px/753px*100%;
+    width: 40px;
+    position: relative;
+    top: 7px;
   }
   .leaf-icon {
+    position: relative;
+    top: 15px;
     @include sprite($leaf);
     margin-right: 23px/753px*100%;
     width: 31px;
@@ -24,16 +26,15 @@
   .media-body{
     font-family: $roboreg;
     font-size: 14px;
-    //min-width: 490px;
     p{
       margin-bottom: 40px;
       font-size: 24px;
       font-family: $robolight;
-      vertical-align: text-top;
     }
   }
   .arrow-up{
     position: relative;
+    top: 8px;
     width: 0;
     height: 0;
     border-style: solid;
@@ -41,18 +42,19 @@
     border-color: transparent transparent #2e2e2e transparent;
     &:after{
       position: absolute;
-      top: 3px;
+      top: 4px;
       left: -5px;
       content: '';
       width: 0;
       height: 0;
       border-style: solid;
       border-width: 0 5px 5px 5px;
-      border-color: transparent transparent $body-bg transparent;
+      border-color: transparent transparent #ffffff transparent;
     }
   }
   .arrow-down{
     position: relative;
+    top: 8px;
     width: 0;
     height: 0;
     border-style: solid;
@@ -60,14 +62,14 @@
     border-color: #2e2e2e transparent transparent transparent;
     &:after{
       position: absolute;
-      top: -8px;
+      top: -9px;
       left: -5px;
       content: '';
       width: 0;
       height: 0;
       border-style: solid;
       border-width: 5px 5px 0 5px;
-      border-color: $body-bg transparent transparent transparent;
+      border-color: #ffffff transparent transparent transparent;
     }
   }
 }
@@ -77,13 +79,25 @@
   padding-top: 0;
   padding-bottom: 50px;
   box-shadow: none;
+  &:nth-child(2){
+    padding-left: 0;
+  }
   .media-body {
     p {
       font-size: 24px;
       margin-bottom: 20px;
-      @include media-breakpoint-up(xl){
+      @include media-breakpoint-up(lg) {
         font-size: 40px;
       }
+    }
+  }
+}
+.second-row{
+  .media{
+    margin-bottom: 20px;
+    &:nth-child(2){
+      padding-top: 45px;
+      padding-bottom: 45px;
     }
   }
 }

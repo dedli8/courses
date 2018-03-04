@@ -1,10 +1,75 @@
+//card styles
+
 .card{
   width: 241px;
   padding-left: 12px;
   padding-right: 12px;
-  .card-logo{
-    width: 83px;
-    height: 83px;
+  position: relative;
+  padding-top: 50px;
+  border-radius: 0;
+  box-shadow: 0px 0px 3px #a3a3a3;
+  .card-logo-box{
+    width: 95px;
+    padding: 13px 18px;
     background-color: #ffffff;
+    box-shadow: 0 0 7px rgba(0,0,0,3.5);
+    position: absolute;
+    left: 22px;
+    top: -15px;
+  }
+  .star-icon{
+@include sprite($star);
+    position: absolute;
+    right: 22px;
+    top: 13px;
+  }
+  .card-img{
+    margin-bottom: 22px;
+  }
+  .card-body{
+    padding: 0 10px;
+    margin-bottom: 24px;
+.checked-icon{
+  @include sprite($checked);
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 13px;
+  position: relative;
+  top: 4px;
+}
+    .card-title{
+      font-size: 18px;
+      font-family: $robolight;
+      width: 120px;
+      display: inline-block;
+    }
+    .card-text{
+font-size: 14px;
+      margin-bottom: 24px;
+    }
+  }
+  .card-line{
+    height: 1px;
+    background-color: #d1d1d1;
+    margin-bottom: 14px;
+  }
+  .card-mark {
+    padding: 0 10px;
+    .markmap-icon {
+      @include sprite($graymark);
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 12px;
+      position: relative;
+      top: 4px;
+    }
+    .mark-name{
+      display: inline-block;
+      width: 120px;
+      font-size: 14px;
+      p:first-child{
+        margin-bottom: 12px;
+      }
+    }
   }
 }
