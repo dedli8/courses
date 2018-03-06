@@ -1,6 +1,7 @@
 @import 'sprite';
 @import 'settings';
 @import 'fonts';
+//@import 'owlcarousel';
 // Требуемое
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
@@ -13,8 +14,14 @@
 @import "../../node_modules/bootstrap/scss/navbar";
 @import "../../node_modules/bootstrap/scss/card";
 
+@import '../../node_modules/owl.carousel/src/scss/owl.carousel.scss';
+
 body{
   font-family: $font-family-main;
+  background-color: white;
+  @include media-breakpoint-up(sm){
+    background-color: $body-bg;
+  }
 }
 
 @import 'navsection';

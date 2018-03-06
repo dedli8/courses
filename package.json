@@ -29,18 +29,19 @@
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^1.1.5",
     "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^2.30.1",
     "image-webpack-loader": "^3.4.2",
+    "jquery": "^3.3.1",
     "lodash": "^4.17.4",
     "node-sass": "^4.5.3",
+    "owl.carousel": "^2.2.0",
+    "popper.js": "^1.12.9",
     "postcss-loader": "^2.1.1",
     "resolve-url-loader": "^2.1.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.7.1",
-    "webpack-spritesmith": "^0.4.0",
-    "html-webpack-plugin": "^2.30.1",
-    "jquery": "^3.3.1",
-    "popper.js": "^1.12.9"
+    "webpack-spritesmith": "^0.4.0"
   }
 }

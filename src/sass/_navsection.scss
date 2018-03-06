@@ -1,11 +1,8 @@
 //navbar section
 
 .header-section {
-  height: 554px;
   max-width: 1920px;
-  box-sizing: border-box;
-  background: url("../images/slide.png");
-  background-repeat: no-repeat;
+  overflow: hidden;
   .navbar {
     width: 100%;
     background-color: #1a5f73;
@@ -41,6 +38,7 @@
       .btn-map-icon {
         margin-right: 13px/845px*100%;
         @include sprite($markmap);
+        width: 13px;
       }
       .btn-map-arrow {
         width: 0;
@@ -87,6 +85,12 @@
       @include sprite($avatar);
       width: 39px;
       height: 39px;
+    }
+  }
+  .main-bg-image{
+    height: 847px;
+    @include media-breakpoint-up(sm) {
+     height: 554px;
     }
   }
 }

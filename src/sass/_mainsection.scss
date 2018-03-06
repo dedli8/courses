@@ -1,13 +1,22 @@
 //main section styles
 
-.main-section{
+.main-section {
   position: relative;
-  top: -211px;
+  top: -800px;
   width: 100%;
-  .column{
-    width: 753px/1920px*100%;
-    //min-width: 510px;
+  padding: 0 2%;
+  padding-bottom: 199px;
+  @include media-breakpoint-up(sm) {
+    padding: 0;
+    padding-bottom: 42px;
+    top: -211px;
   }
-  @import "mediaobject";
-  @import "card";
+  .content-box {
+      @include media-breakpoint-up(lg) {
+        width: 1007px/1920px*100%;
+      }
+    @import "mediaobject";
+    @import "card";
+    @import "owlcarousel";
+  }
 }
