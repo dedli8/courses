@@ -38,7 +38,6 @@
       .btn-map-icon {
         margin-right: 13px/845px*100%;
         @include sprite($markmap);
-        width: 13px;
       }
       .btn-map-arrow {
         width: 0;
@@ -57,7 +56,6 @@
       font-size: 0;
       .bell-white-icon {
         @include sprite($bellwhite);
-        width: 17px;
       }
       .bell-icon {
         @include sprite($bell);
@@ -83,8 +81,6 @@
     }
     .avatar-icon {
       @include sprite($avatar);
-      width: 39px;
-      height: 39px;
     }
   }
   .main-bg-image {

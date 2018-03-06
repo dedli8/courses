@@ -19,7 +19,6 @@
   .edu-icon {
     @include sprite($edu);
     margin-right: 23px/753px*100%;
-    width: 40px;
     position: relative;
     top: 7px;
     display: inline-block;
@@ -33,7 +32,6 @@
     top: 15px;
     @include sprite($leaf);
     margin-right: 23px/753px*100%;
-    width: 31px;
     display: inline-block;
     margin-bottom: 23px;
     margin-top: 58px;

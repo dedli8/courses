@@ -119,6 +119,9 @@ const config = {
             },
             apiOptions: {
                 cssImageRef: "../images/sprite.png"
+            },
+            spritesmithOptions: {
+                padding: 5
             }
         }),
         new webpack.ProvidePlugin({
