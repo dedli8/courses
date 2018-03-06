@@ -12,9 +12,9 @@
     top: -211px;
   }
   .content-box {
-      @include media-breakpoint-up(lg) {
-        width: 1007px/1920px*100%;
-      }
+    @include media-breakpoint-up(lg) {
+      width: 1007px/1920px*100%;
+    }
     @import "mediaobject";
     @import "card";
     @import "owlcarousel";

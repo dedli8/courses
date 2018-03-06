@@ -110,7 +110,7 @@ const config = {
         require('autoprefixer'),
 	new SpritesmithPlugin({
             src: {
-                cwd: path.resolve(__dirname, 'src/ico'),
+                cwd: path.resolve(__dirname, 'src/images/ico'),
                 glob: '*.png'
             },
             target: {
